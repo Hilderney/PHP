@@ -33,4 +33,18 @@ array explode ( string $delimiter , string $string [, int $limit ] )
 // $string -> String with data joined by a single separator - "," (a,b,c,d)
 // $limit -> number of limiters that will be separated
 
+
+// ========================= Using Limit ======================= //
+
+// String with separators
+$str = 'one|two|three|four';
+
+// RESULT Positive limit
+print_r(explode('|', $str, 2));
+// Array ( [0] => one [1] => two|three|four )
+
+// RESULT Negative limit (since PHP 5.1)
+print_r(explode('|', $str, -1));
+// Array( [0] => one   [1] => two   [2] => three )
+
 ?>
